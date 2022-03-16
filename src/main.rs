@@ -16,8 +16,8 @@ fn bump_memlock_rlimit()->Result<()>{
 }
 
 fn main()->Result<()> {
-    bump_memlock_rlimit();
-    let mut exec_builder = ExecSkelBuilder::default();
+    let _ = bump_memlock_rlimit();
+    let exec_builder = ExecSkelBuilder::default();
     let mut exec = exec_builder.open()?.load()?;
     exec.attach()?;
     println!("hello world");

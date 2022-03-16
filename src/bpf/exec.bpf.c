@@ -20,7 +20,7 @@ SEC("lsm/bprm_check_security")
 int lsm_hook(struct linux_binprm *bprm)
 {
     bpf_printk("lsm hook called\n");
-    return 0;
+    return -16;
 }
 
 char LICENSE[] SEC("license") = "GPL";
